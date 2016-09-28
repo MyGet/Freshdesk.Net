@@ -16,18 +16,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using Newtonsoft.Json;
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Freshdesk
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class CreateTicketInfo
     {
+        public CreateTicketInfo()
+        {
+            CustomFields = new Dictionary<string, string>();
+        }
+
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
 
@@ -42,5 +44,8 @@ namespace Freshdesk
 
         [JsonProperty(PropertyName = "status")]
         public int Status { get; set; }
+
+        [JsonProperty(PropertyName = "custom_field")]
+        public Dictionary<string, string> CustomFields { get; set; }
     }
 }
