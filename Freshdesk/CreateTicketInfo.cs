@@ -39,6 +39,9 @@ namespace Freshdesk
         [JsonProperty(PropertyName = "email")]
         public string Email { get; set; }
 
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
         [JsonProperty(PropertyName = "priority")]
         public int Priority { get; set; }
 
